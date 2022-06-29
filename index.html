@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -15,18 +23,23 @@
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
+<script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=fyxhgrn1db"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- Custom styles for this template-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
 
-    <script type="text/javascript"
-        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=fyxhgrn1db"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script>
 
 
     <style>
@@ -43,6 +56,16 @@
             height: 100%;
             width: 100%;
         }
+        
+        .vertical-scrollable>.row {
+            position: absolute;
+            top: 220px;
+            bottom: 100px;
+           
+            
+            overflow-y: scroll;
+        }
+        
     </style>
 
 </head>
@@ -85,19 +108,38 @@
                                 style="width: 100%;height: 100%;"></iframe> -->
                                 <div class="row">
                                     <div class="col-4">
-                                        <div class="card" style="padding: 25px;">
+                                        <div class="card" style="padding: 20px;">
                                             <div>
                                                 <h5 style="color: black;">미스터아빠 매장수</h5>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md">
                                                     <div class="progress" style=" height: 13px;">
-                                                        <div class="progress-bar" role="progressbar" style="width:75%; background-color:rgb(102, 48, 226) !important;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        <div class="progress-bar" role="progressbar" style="width:25%; background-color:rgb(102, 48, 226) !important;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-auto">
                                                     <h6 style="color: rgb(102, 48, 226);" >100</h6>
                                                 </div>
+                                            </div>
+                                            <div>
+                                                <p style="color: black;">매장수 - 25개</p>
+                                            </div>
+                                            <div>
+                                                <h5 style="color: black;">미스터아빠 상품공급점</h5>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md">
+                                                    <div class="progress" style=" height: 13px;">
+                                                        <div class="progress-bar" role="progressbar" style="width:70%; background-color:rgb(102, 48, 226) !important;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-auto">
+                                                    <h6 style="color: rgb(102, 48, 226);" >200</h6>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p style="color: black;">상품공급점 - 104개</p>
                                             </div>
                                         </div>
                                     </div>
@@ -116,9 +158,12 @@
                                                     <h6 style="color: rgb(102, 48, 226);" >1,000,000,000</h6>
                                                 </div>
                                             </div>
+                                            <div>
+                                                <p style="color: black;">일평균매출 - 79,513,435원</p>
+                                            </div>
                                         </div>
                                         <br>
-                                        <p style="color: black;">* 6월 목표 일 평균 매출 : 2,000,000,000</p>
+                                        <button class="btn btn-lg" style="color: white; background-color: rgb(102, 48, 226) ;">* 7월목표 일매출 ㅡ 86,000,000원</button>                                        </p>
                                     </div>
                                     
                                     <div class="col-4">
@@ -136,175 +181,524 @@
                                                     <h6 style="color: rgb(102, 48, 226);" >10,000,000,000</h6>
                                                 </div>
                                             </div>
+                                            <div>
+                                                <p style="color: black;">6월매출 - 2,425,34,212원</p>
+                                            </div>
                                         </div>
                                         <br>
-                                        <p style="color: black;">* 6월 목표 매출 : 2,000,000,000</p>
+                                        <button class="btn btn-lg" style="color: white; background-color: rgb(102, 48, 226) ;">* 7월목표매출 ㅡ 2,946,352,451원</button>
                                     </div>
                                 </div>
                                 <br>
                                 
                                 <!---Next row for Buttons and Liner Graph -->
+                                    
                                 
                                 <div class="row">
-                                    <div class="col-4">
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10px; margin: 3px;">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-1-logo.png" alt="">
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10p; margin: 3px">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-2-logo.png" alt="">
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
+                                    <div class="scrols" style="height:60vh; overflow-y: scroll; width:33%">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-1-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;"> 미스터아빠</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10p; margin: 3px">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-3-logo.png" alt="">
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10p; margin: 3px">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-4-logo.png" alt="">
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px;  ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-2-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">향남점</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10p; margin: 3px">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-5-logo.png" alt="">
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10p; margin: 3px">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-6-logo.png" alt="">
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-3-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">마트 화성향남점</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10p; margin: 3px">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-7-logo_non-optimized.png" alt="">
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-4-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="card " style="width:100%; padding: 10px; margin-left: 10p; margin: 3px">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-8-logo.png" alt="">
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-5-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠쿡 청라점</h6>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-9">
-                                                        <h6 style="color: black; padding-top: 20px;">창원유니시티점</h6>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-6-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠 창원유니시티점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-7-logo_non-optimized.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠 동탄반도점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-8-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠 무동점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-7-logo_non-optimized.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠 토월성원점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-2-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠 삼천포점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-5-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠 향남점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-4-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">롯데백화점 마산점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-3-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">화성향남점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-6-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">롯데백화점 동래점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-1-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">푸드플랜 1호점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-6-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠 신서점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-3-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">진영중흥점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-5-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">화성향남점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-5-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">창원안민점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-3-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">대구다사점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-4-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">마켓 회성점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-1-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">삼계점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-4-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">가맹스토어 본부</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-6-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">동네점빵 경산중산점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-7-logo_non-optimized.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">친환경 PB센터</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-7-logo_non-optimized.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">롯데백화점창원점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-2-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠쿡 봉담점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-3-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">영종도점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-5-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">화성향남점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-1-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">밀키트PB센터</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-3-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">새벽배송물류센터</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-7-logo_non-optimized.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">미스터아빠쿡 바란점</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px; margin-left: 10p; ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-6-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;">수산PB 소분센터</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card " style="width:100%; padding: 10px; margin-bottom: 3px;  ">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img style="width:50px; height:50px" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/shop-2-logo.png" alt="">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h6 style="color: black; padding-top: 20px;"> 동탄반도점</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                
+                                        <div class="col-8">
+                                            <div class="card  p-3 mb-5 bg-white rounded" style="">
+                                                <canvas id="myChart" width="300" height="200"></canvas>
+                                                <script>
+                                                    function generateRandom(min = 50, max = 100) {
 
-                                    <div class="col-8">
-                                        <div class="card  p-3 mb-5 bg-white rounded" style="margin: 3px">
-                                            <canvas id="myChart" width="300" height="200"></canvas>
-                                            <script>
-                                            const ctx = document.getElementById('myChart').getContext('2d');
-                                            const myChart = new Chart(ctx, {
-                                                type: 'bar',
-                                                data: {
-                                                    labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09'],
-                                                    datasets: [{
-                                                        label: '* 단위 : 만원 / 일',
-                                                        data: [750, 630, 500, 700, 500, 600, 720, 550, 430],
-                                                        backgroundColor: [
-                                                            'rgba(102, 48, 226)'
-                                                        ],
-                                                        borderColor: [
-                                                            'rgba(102, 48, 226)',
-                                                            'rgba(102, 48, 226)',
-                                                            'rgba(102, 48, 226)',
-                                                            'rgba(102, 48, 226)',
-                                                            'rgba(102, 48, 226)',
-                                                            'rgba(102, 48, 226)'
-                                                        ],
-                                                        borderWidth: 1
-                                                    }]
-                                                },
-                                                options: {
-                                                    scales: {
-                                                        y: {
-                                                            beginAtZero: true
-                                                        },
-                                                        x: {
-                                                            grid: {
-                                                                display: false
-                                                            }
-                                                        },
-                                                        y: {
-                                                            grid: {
-                                                                display: false
+                                                        // find diff
+                                                        let difference = max - min;
+
+                                                        // generate random number 
+                                                        let rand = Math.random();
+
+                                                        // multiply with difference 
+                                                        rand = Math.floor( rand * difference);
+
+                                                        // add with min value 
+                                                        rand = rand + min;
+
+                                                        return rand;
+                                                        }
+                
+                                                    // setup block
+                                                    const data = {
+                                                        //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                                            datasets: [{
+                                                                label: '# of Votes',
+                                                                data: [],
+                                                                backgroundColor:
+                                                                    'rgba(102, 48, 226)',
+                                                                borderColor: 
+                                                                    'rgba(102, 48, 226)',
+                                                                borderWidth: 1
+                                                            }]
+                                                    };
+                                                    // config block
+                                                    const config = {
+                                                        type: 'bar',
+                                                        data,
+                                                        options: {
+                                                            plugins: {
+                                                                streaming: {
+                                                                    duration: 60000                            
+                                                                }
+                                                            },
+                                                            scales: {
+                                                                x:{
+                                                                    type: 'realtime',
+                                                                    realtime: {
+                                                                        delay: 4000,
+                                                                        onRefresh: chart => {
+                                                                            chart.data.datasets.forEach(dataset => {
+                                                                                dataset.data.push({
+                                                                                    x: Date.now(),
+                                                                                    y: generateRandom() 
+                                                                                });
+                                                                            });
+                                                                        }
+                                                                    },
+                                                                    grid: {
+                                                                        display: false
+                                                                    }
+                                                                },
+                                                                y: {
+                                                                    beginAtZero: true,
+                                                                    grid: {
+                                                                        display: false
+                                                                    }
+                                                                },
                                                             }
                                                         }
-                                                    }
-                                                }  
-                                            });
-                                            </script>
-                                           </div> 
-                                           <br>
-                                           <div class="row">
-                                            <div class="col-5">
-                                                <img style=" height:50px; margin: 3px;" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/logo.png" alt="">
-                                            </div>
-                                            <div class="col-7">
-                                                <p style="color: black; font-size: 13px;">상품의 생산부터 유통과정을 거쳐 고객의 손에 닿기까지 모든 공정을 함께하며 진심을 
-                                                    다하여 상품을 관리하는 정직한 브랜드 미스터아빠</p>
+                                                    };
+                                                    // render init block
+                                                    const myChart = new Chart(
+                                                        document.getElementById('myChart'),
+                                                        config
+                                                    );
+                                                    </script>
+                                            </div> 
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <img style=" height:50px; ;" src="https://barkhayot-portfolio-bucket.s3.amazonaws.com/logo.png" alt="">
+                                                </div>
+                                                <div class="col-7">
+                                                    <p style="color: black; font-size: 13px;">상품의 생산부터 유통과정을 거쳐 고객의 손에 닿기까지 모든 공정을 함께하며 진심을 
+                                                        다하여 상품을 관리하는 정직한 브랜드 미스터아빠</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                        
                         </div>
 
 
@@ -317,8 +711,8 @@
 
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
+            <br><br><br>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -332,6 +726,7 @@
         <!-- End of Content Wrapper -->
 
     </div>
+    
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -411,6 +806,7 @@
                 { location: '창원유니시티점', lat: '35.2549559', lng: '128.6315222' },  // 미스터아빠 창원유니시티점과일
                 { location: '향남점', lat: '37.1120716', lng: '126.9210696' },  // 미스터아빠 향남점슈퍼,마트
                 { location: '무동점', lat: '35.3172634', lng: '128.5847419' },  // 미스터아빠 무동점
+                { location: 'new', lat: '37.4979502', lng: '127.0276368' },
             );
 
 
@@ -474,3 +870,6 @@
 </body>
 
 </html>
+
+
+
